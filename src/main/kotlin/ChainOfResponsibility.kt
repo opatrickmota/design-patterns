@@ -3,7 +3,7 @@ import chainOfResponsibility.orcamento.Orcamento
 import java.math.BigDecimal
 
 fun main(args: Array<String>) {
-    val primeiroOrcamento = Orcamento(BigDecimal("200"), 4)
+    val primeiroOrcamento = Orcamento(BigDecimal("200"), 6)
     val segundoOrcamento = Orcamento(BigDecimal("1000"), 1)
     val calculadora = CalculadoraDeDescontos()
 
