@@ -1,35 +1,40 @@
 package state.orcamento
 
+import state.orcamento.situacao.EmAnalise
+import state.orcamento.situacao.SituacaoOrcamento
 import java.math.BigDecimal
 
 class Orcamento(valor: BigDecimal, quantidadeItens: Int) {
 
     private var valor: BigDecimal
     private var quantidadeItens: Int
-    private var situacao: String
+    private var situacao: SituacaoOrcamento
 
     init {
         this.valor = valor
         this.quantidadeItens = quantidadeItens
-        this.situacao = "EM ANALISE"
+        this.situacao = EmAnalise()
     }
 
     fun aplicarDescontoExtra() {
-        var valorDoDescontoExtra = BigDecimal.ZERO
-
-        /* UMA CADEIA DE IF PARA CADA SITUAÇÃO, MESMO SE FOSSE ENUM */
-
-        if (situacao.equals("EM ANALISE")){
-            valorDoDescontoExtra = BigDecimal("0.05")
-        } else if (situacao.equals("APROVADO")) {
-            valorDoDescontoExtra = BigDecimal("0.02")
-        }
-
+        val valorDoDescontoExtra = this.situacao.calcularValorDoDescontoExtra(this)
         this.valor = this.valor.subtract(valorDoDescontoExtra)
     }
 
     fun aprovar() {
-        this.situacao = "APROVADO"
+        this.situacao.aprovar(this)
+    }
+
+    fun reprovar() {
+        this.situacao.reprovar(this)
+    }
+
+    fun finalizar() {
+        this.situacao.finalizar(this)
+    }
+
+    fun setSituacao(situacaoOrcamento: SituacaoOrcamento) {
+        this.situacao = situacaoOrcamento
     }
 
     fun getValor(): BigDecimal {
