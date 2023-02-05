@@ -5,10 +5,11 @@ import java.math.BigDecimal
 
 class DescontoParaOrcamentoComMaisDeCincoItens(proximo: Desconto? = null) : Desconto(proximo = proximo) {
 
-    override fun calcular(orcamento: Orcamento): BigDecimal {
-        if (orcamento.getQuantidadeItens() > 5) {
-            return orcamento.getValor().multiply(BigDecimal("0.1"))
-        }
-        return proximo?.calcular(orcamento) ?: BigDecimal.ZERO
+    override fun efetuarCalculo(orcamento: Orcamento): BigDecimal {
+        return orcamento.getValor().multiply(BigDecimal("0.1"))
+    }
+
+    override fun deveAplicar(orcamento: Orcamento): Boolean {
+        return orcamento.getQuantidadeItens() > 5
     }
 }
