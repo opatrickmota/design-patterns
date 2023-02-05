@@ -10,9 +10,9 @@ todas as classes que o implementam tem métodos em comum, mas cada uma vai imple
 será passado a classe concreta que faz sentido no contexto, sem a necessidade de fazer uso de vários *if*. É passado a estratégia direto.
 
 Um exemplo é o seguinte [link](https://github.com/opatrickmota/design-patterns/commit/ef882fb2e47e05867b49054dd5c92fe232f7a1eb) de código, 
-que antes tinha um *if* para cada tipo de desconto. Mas ao passo que o desconto se torna uma interface 
-cada desconto específico passa a aplicar o cálculo de forma específica. E no contexto onde estaria a cadeia de *if* passa a chamar o método da inteface 
-que será chamado a classe concreta por trás.
+que antes tinha um *if* para cada tipo de desconto. Mas ao passo que o desconto se torna uma interface, 
+cada tipo de de desconto específico passa a aplicar o cálculo de forma específica. 
+E no contexto onde estaria a cadeia de *if* passa a chamar o método da inteface que, por sua vez, chamará a classe concreta que o implementa por trás.
 
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/ef882fb2e47e05867b49054dd5c92fe232f7a1eb)
 
@@ -27,3 +27,10 @@ uma classe para cada condicional dos *ifs*. Nessas classes haverá uma variável
 por diante. 
 
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/dfcf44d29cbbf7d06ea1cd7e4a09d6dcb816f6fe)
+
+## Template Method
+
+O padrão Template Method favorece o reaproveitamento de códigos comuns entre classes, evitando assim duplicações de códigos. Dessa forma, na
+classe mãe há um método concreto que implementa a lógica que antes do *template method* seria repetida em todas classes filhas.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/81db188677da0298229305cf0461306fd0359b5b)
