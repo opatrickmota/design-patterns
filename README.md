@@ -34,3 +34,12 @@ O padrão Template Method favorece o reaproveitamento de códigos comuns entre c
 classe mãe há um método concreto que implementa a lógica que antes do *template method* seria repetida em todas classes filhas.
 
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/81db188677da0298229305cf0461306fd0359b5b)
+
+## State
+
+Essa padrão surge igual ao *strategy* para resolver a questão dos muitos *ifs*. O *state* é utilizado para representar os diferentes estados que 
+o objeto pode ter. E se para executar uma tarefa dependemos do estado do objeto podemos delegar a chamada desse método para a classe que representa 
+esse estado atual.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/f7c11ebf1de0477494f099a42bdffb7fe6319bb4)
+
