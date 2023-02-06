@@ -2,9 +2,9 @@ package observer.pedido.acao
 
 import observer.pedido.Pedido
 
-class EnviarEmailPedido {
+class EnviarEmailPedido : AcaoAposGerarPedido {
 
-    fun executar(pedido: Pedido) {
+    override fun executarAcao(pedido: Pedido) {
         println("Enviando e-mail com dados do usuário!")
     }
 }

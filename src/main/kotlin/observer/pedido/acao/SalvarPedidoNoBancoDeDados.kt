@@ -2,9 +2,9 @@ package observer.pedido.acao
 
 import observer.pedido.Pedido
 
-class SalvarPedidoNoBancoDeDados {
+class SalvarPedidoNoBancoDeDados : AcaoAposGerarPedido {
 
-    fun executar(pedido: Pedido) {
+    override fun executarAcao(pedido: Pedido) {
         println("Salvando pedido no banco de dados!")
     }
 }
