@@ -1,17 +1,16 @@
-import command.orcamento.Orcamento
-import command.pedido.Pedido
+import command.pedido.GeraPedido
+import command.pedido.GeraPedidoHandler
 import java.math.BigDecimal
-import java.time.LocalDateTime
 
 fun main(args: Array<String>) {
-    val orcamento = Orcamento(BigDecimal("600"), 4)
-    val cliente = "Maria Helena"
-    val data = LocalDateTime.now()
+    println("Nome: ")
+    val cliente: String = readlnOrNull().toString()
+    println("Valor: ")
+    val valorOrcamento = BigDecimal(readlnOrNull().toString())
+    println("Quantidade: ")
+    val quantidadeItems: Int = readlnOrNull()?.toInt() ?: 1
 
-    val pedido = Pedido(cliente, data, orcamento)
-
-    println("-------- COMMAND --------")
-    println("Salvar pedido no banco de dados")
-    println("Enviar e-mail com dados do pedido")
-    println("-----------------------")
+    val gerador = GeraPedido(cliente, valorOrcamento, quantidadeItems)
+    val handler = GeraPedidoHandler()
+    handler.executa(gerador)
 }
