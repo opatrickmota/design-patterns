@@ -64,3 +64,24 @@ Notificar vários objetos sobre a mudança de algo. Quando a mudança de estado 
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/464dabcd679ad93769961ad4d6dc3b37d1b09ecc)
 
 [Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/observer)
+
+
+# Structural Design Patterns
+
+## Adapter
+
+Esse padrão permite que você defina uma classe intermediária que servirá como ponte entre a classe de serviço com a classe antiga/ou que pode ser
+modificada constantemente, dependendo aqui da interface e não da implementação.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/84f16b1a8adba8bf9a12aec2b40e75203e0d21c5)
+
+[Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/adapter)
+
+## Decorator
+
+Permite adiciona novos comportamentos aos objetos sem quebrar comportamentos antigos. No final, acaba sendo criado uma cadeia de objetos que
+receberm objetos do mesmo tipo. Não é um padrão bonito.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/714dba6123b4fd8682fd0c74255d75c59369162b)
+
+[Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/decorator)
