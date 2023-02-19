@@ -1,6 +1,7 @@
 package adapter.orcamento
 
 import adapter.orcamento.situacao.EmAnalise
+import adapter.orcamento.situacao.Finalizado
 import adapter.orcamento.situacao.SituacaoOrcamento
 import java.math.BigDecimal
 
@@ -43,5 +44,9 @@ class Orcamento(valor: BigDecimal, quantidadeItens: Int) {
 
     fun getQuantidadeItens(): Int {
         return quantidadeItens
+    }
+
+    fun isFinalizado(): Boolean {
+        return situacao is Finalizado
     }
 }

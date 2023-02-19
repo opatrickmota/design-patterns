@@ -1,12 +1,16 @@
 package adapter.orcamento
 
-class RegistroDeOrcamento {
+import adapter.http.HttpAdapter
+
+class RegistroDeOrcamento(private val http: HttpAdapter) {
 
     fun registrar(orcamento: Orcamento) {
-        /* Chamada http para api externa */
-        /* Temos varias opçoes, url connection, http client, biblioteca rest...
-            Porem estaremos misturando a configuração da chamada com o registrar.
-            Temos uma dependencia, devemos depender da abstracao inves da implementacao
-        * */
+        if (!orcamento.isFinalizado()) {
+            throw Throwable("Orcamento nao finalizado!")
+        }
+        val url = "https://example.com/"
+        val dados =
+            mapOf<String, Any>(Pair("valor", orcamento.getValor()), Pair("quantidade", orcamento.getQuantidadeItens()))
+        http.post(url, dados)
     }
 }
