@@ -111,3 +111,15 @@ esconde detalhes da implementação.
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/464dabcd679ad93769961ad4d6dc3b37d1b09ecc)
 
 [Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/facade)
+
+## Proxy
+
+Atua como intermediário em um serviço, podendo ser usando como cache, que é o exemplo abaixo. Outra forma de se fazer um cache dos dados em kotlin é 
+com inicialização _**lazy**_, que a partir da segunda chamada mantem os dados em cache sem fazer a chamada a outro recurso para obter o dado novamente.
+
+Para simular um demora de uma chamada para outra foi utilizado o _**Thread.sleep()**_, que na primeira chamada atrasa a entrega do recurso, 
+mas a partir da segunda tem-se que o valor já está em cache.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/cba04680563b7cecc609f706559c1bacbeaedcaf)
+
+[Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/proxy)
