@@ -85,3 +85,17 @@ receberm objetos do mesmo tipo. Não é um padrão bonito.
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/714dba6123b4fd8682fd0c74255d75c59369162b)
 
 [Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/decorator)
+
+
+## Composite
+
+Utilizamos essa padrão quando queremos de alguma forma que um objeto seja composto por outro do mesmo tipo. No exemplo abaixo, temos que
+podemos utilizar o orcamento antigo para compor o novo orcamento. Dessa forma, podemos trabalhar e acessar os dados de objetos do 
+mesmo tipo, percorrendo seus dados e utilizando o que é necessário. É um padrão bem parecido com o Decorator.
+
+É necessário um trabalho para entender o que há de comum entre os objetos para ser implementado uma interface. Depois desse trabalho inicial, 
+um objeto já se torna capaz de receber outro do mesmo tipo para usar dados comuns necessários para a execução de uma tarefa.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/457589360a433d2d316a6e8c21e7c293a7e40fe0)
+
+[Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/composite)
