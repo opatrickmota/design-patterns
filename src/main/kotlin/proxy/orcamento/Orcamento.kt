@@ -5,7 +5,7 @@ import proxy.orcamento.situacao.Finalizado
 import proxy.orcamento.situacao.SituacaoOrcamento
 import java.math.BigDecimal
 
-class Orcamento(): Orcavel {
+open class Orcamento(): Orcavel {
 
     private var valor: BigDecimal
     private var situacao: SituacaoOrcamento
