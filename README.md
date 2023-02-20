@@ -99,3 +99,15 @@ um objeto já se torna capaz de receber outro do mesmo tipo para usar dados comu
 [Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/457589360a433d2d316a6e8c21e7c293a7e40fe0)
 
 [Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/composite)
+
+## Facade
+
+Atua como uma fachada, escondendo detalhes internos da implementação. Dessa forma uma classe não precisa saber o que é feito por de baixo dos panos, 
+ela apenas chamada um método que irá executar tudo o que é necessário para o funcionamento do serviço, na ordem correta e etc.
+
+Vimos isso sendo implementado quando estudavamos sobre o padrão observer. A chamada do **_handler.executar_** no método main é uma fachada, ela 
+esconde detalhes da implementação.
+
+[Diferenças aplicando padrão e sem aplicar](https://github.com/opatrickmota/design-patterns/commit/464dabcd679ad93769961ad4d6dc3b37d1b09ecc)
+
+[Explicação no Refactoring Guru](https://refactoring.guru/design-patterns/facade)
