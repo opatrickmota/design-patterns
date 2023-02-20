@@ -5,15 +5,15 @@ import composite.orcamento.situacao.Finalizado
 import composite.orcamento.situacao.SituacaoOrcamento
 import java.math.BigDecimal
 
-class Orcamento(valor: BigDecimal, quantidadeItens: Int) {
+class Orcamento() {
 
     private var valor: BigDecimal
-    private var quantidadeItens: Int
     private var situacao: SituacaoOrcamento
+    private var items: ArrayList<ItemOrcamento>
 
     init {
-        this.valor = valor
-        this.quantidadeItens = quantidadeItens
+        this.valor = BigDecimal.ZERO
+        this.items = arrayListOf()
         this.situacao = EmAnalise()
     }
 
@@ -43,10 +43,15 @@ class Orcamento(valor: BigDecimal, quantidadeItens: Int) {
     }
 
     fun getQuantidadeItens(): Int {
-        return quantidadeItens
+        return items.size
     }
 
     fun isFinalizado(): Boolean {
         return situacao is Finalizado
+    }
+
+    fun adicionarItem(item: ItemOrcamento) {
+        this.valor = valor.add(item.valor)
+        this.items.add(item)
     }
 }
