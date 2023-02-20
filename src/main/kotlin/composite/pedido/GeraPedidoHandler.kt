@@ -13,7 +13,7 @@ class GeraPedidoHandler(acoes: List<AcaoAposGerarPedido>) {
     }
 
     fun executar(dados: GeraPedido) {
-        val orcamento = Orcamento(dados.orcamento, dados.quantidadeItems)
+        val orcamento = Orcamento()
 
         val pedido = Pedido(dados.cliente, LocalDateTime.now(), orcamento)
 

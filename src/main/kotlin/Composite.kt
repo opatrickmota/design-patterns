@@ -9,7 +9,8 @@ fun main(args: Array<String>) {
 
     val novo = Orcamento()
     novo.adicionarItem(ItemOrcamento(BigDecimal("500")))
-    /* Como compor/reaproveitar o antigo orcamento no novo */
-    // novo.adicionarItem(antigo)
+    novo.adicionarItem(antigo)
+
+    println("Valor do novo orcamento junto com o antigo: " + novo.getValor())
 
 }
